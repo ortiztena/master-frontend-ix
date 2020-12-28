@@ -1,2 +1,2 @@
 # master-frontend-ix
-lab
+laboratory
