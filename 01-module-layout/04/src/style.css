@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+.picture {
+    background-image: url(https://woodenboatfestivalgeelong.com.au/wp-content/uploads/2020/03/IMG_1250.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.grid-container-1 {
+    padding-bottom: 10px;
+    width:50%;
+    display:grid;
+    justify-content: center;
+    grid-template-columns: 300px;
+    grid-template-rows: 3fr 1fr 2fr 1fr 1fr;
+    border: 20px solid lightgrey;
+}
+
+.postinfo{
+    display:flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.green {
+    background-color: hsla(120, 76%, 45%, 0.616);
+    color: honeydew;
+    font-size: 1.2rem;
+    font-weight: bold;
+    width: 100%;
+    height: 100%;
+}
+
+.green:hover {
+ color: hsla(120, 76%, 45%, 0.616);
+ background-color: honeydew;
+}
+
+.date {
+    color: green;
+}
