@@ -2,7 +2,7 @@
 
 ## Basic
 
-*IMPORTANT*: you must upload these practices to your Github repository (or if you prefer Gitlab or public Bitbucket).
+**IMPORTANT**: you must upload these practices to your Github repository (or if you prefer Gitlab or public Bitbucket).
 
 Implement a simple application that:
 
