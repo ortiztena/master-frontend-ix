@@ -12,7 +12,7 @@ Create a dynamic color palette.
 
 - The idea is to start from a base color, and from that color generate 4 darker colors gradually, and four lighter colors gradually.
 
-- To check that everything is working as expected use the html of the statement (see pdf).
+- To check that everything is working as expected use the html of the statement (look at pdf).
 
 ## Exercise 2
 
@@ -44,4 +44,4 @@ Create the image navigation bar using flexbox
 
 We will create a card type element with CSS Grid.
 
-The alignments should be done with this feature, but the html is totally open (see pdf).
+The alignments should be done with this feature, but the html is totally open (look at pdf).
