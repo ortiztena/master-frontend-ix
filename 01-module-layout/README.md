@@ -2,7 +2,7 @@
 
 Intro
 
-You can download the statement at this link.
+You can follow the instructions on this [pdf](./lab.pdf).
 
 ## Exercise 1
 
