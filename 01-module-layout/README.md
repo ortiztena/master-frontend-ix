@@ -45,3 +45,12 @@ Create the image navigation bar using flexbox
 We will create a card type element with CSS Grid.
 
 The alignments should be done with this feature, but the html is totally open (look at pdf).
+
+
+## NOTE
+
+Install parcel-bundler on the project folder to execute the code.
+
+`npm install parcel-bundler --save-dev`
+
+then, launch the virtual server with `parcel src/index.html`
