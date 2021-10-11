@@ -10,7 +10,7 @@ export const MemberTableRow: React.FC<Props> = (props) => {
   return (
     <tr>
       <td>
-        <img src={member.avatar_url} style={{ width: "5rem" }} />
+        <img src={member.avatar_url} />
       </td>
       <td>
         <span>{member.id}</span>

@@ -23,10 +23,13 @@ export const App = () => {
 
   return (
     <>
-      <input
-        value={inputValue}
-        onChange={(e) => setInputValue(e.target.value)}
-      />
+      <div>
+        Filter :{" "}
+        <input
+          value={inputValue}
+          onChange={(e) => setInputValue(e.target.value)}
+        />
+      </div>
       <MemberTable>
         {filtered.map((member) => (
           <MemberTableRow member={member} />

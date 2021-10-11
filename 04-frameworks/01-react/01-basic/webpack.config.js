@@ -1,19 +1,19 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const path = require("path");
-const basePath = __dirname;
 
 module.exports = {
-  context: path.join(basePath, "src"),
+  context: path.resolve(__dirname, "src"),
   resolve: {
     extensions: [".js", ".ts", ".tsx"],
   },
   entry: {
-    app: ["./index.tsx"],
+    app: "./index.tsx",
   },
-  devtool: "eval-source-map",
-  stats: "errors-only",
   output: {
     filename: "[name].[chunkhash].js",
+    path: path.resolve(__dirname, "dist"),
   },
   module: {
     rules: [
@@ -23,21 +23,53 @@ module.exports = {
         loader: "babel-loader",
       },
       {
-        test: /\.(png|jpg)$/,
+        test: /\.css$/,
+        use: [MiniCssExtractPlugin.loader, "css-loader"],
+      },
+      {
+        test: /\.scss$/,
         exclude: /node_modules/,
-        loader: "url-loader?limit=5000",
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: "css-loader",
+            options: {
+              modules: {
+                exportLocalsConvention: "camelCase",
+                localIdentName: "[path][name]__[local]--[hash:base64:5]",
+                localIdentContext: path.resolve(__dirname, "src"),
+                localIdentHashPrefix: "my-custom-hash", //Optional
+              },
+            },
+          },
+          "sass-loader",
+        ],
+      },
+      {
+        test: /\.(png|jpg)$/,
+        type: "asset/resource",
       },
       {
         test: /\.html$/,
+        exclude: /node_modules/,
         loader: "html-loader",
       },
     ],
   },
   plugins: [
-    //Generate index.html in /dist => https://github.com/ampedandwired/html-webpack-plugin
     new HtmlWebpackPlugin({
-      filename: "index.html", //Name of file in ./dist/
-      template: "index.html", //Name of template in ./src
+      template: "index.html",
+      filename: "index.html",
+      scriptLoading: "blocking",
     }),
+    new MiniCssExtractPlugin({
+      filename: "[name].css",
+      chunkFilename: "[id].css",
+    }),
+    new CleanWebpackPlugin(),
   ],
+  devServer: {
+    port: 8080,
+    stats:"errors-only",
+  },
 };
