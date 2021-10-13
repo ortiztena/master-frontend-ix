@@ -21,11 +21,20 @@ body {
 table {
   padding-top: 20px;
 }
-tbody {
-  td {
-    font-size: 10px;
-    justify-content: space-around;
+thead {
+  th {
     padding: 20px;
+  }
+}
+tbody {
+  tr {
+    td {
+      text-align: center;
+      font-size: 10px;
+      justify-content: space-evenly;
+      align-items: center;
+      padding: 20px;
+    }
   }
 
   td:nth-child(3) {

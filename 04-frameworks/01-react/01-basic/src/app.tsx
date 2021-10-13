@@ -5,34 +5,42 @@ import { MemberTable } from "./members-table";
 
 export const App = () => {
   const [members, setMembers] = React.useState<MemberEntity[]>([]);
-  const [inputValue, setInputValue] = React.useState("");
-  const [filtered, setFiltered] = React.useState<MemberEntity[]>([]);
+  const [inputValue, setInputValue] = React.useState("lemoncode");
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    getMembers(inputValue);
+  };
 
   React.useEffect(() => {
-    fetch("https://api.github.com/orgs/lemoncode/members")
-      .then((response) => response.json())
-      .then((list) => setMembers(list));
+    getMembers(inputValue);
   }, []);
 
-  React.useEffect(() => {
-    const filteredList = members.filter((member) =>
-      member.login.includes(inputValue)
-    );
-    setFiltered(filteredList);
-  }, [members, inputValue]);
+  const getMembers = (inputValue) => {
+    fetch(`https://api.github.com/orgs/${inputValue}/members`)
+      .then((response) => response.json())
+      .then((list) => setMembers(list));
+  };
 
   return (
     <>
-      <div>
-        Filter :{" "}
-        <input
-          value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)}
-        />
-      </div>
+      <form onSubmit={handleSubmit}>
+        <label>
+          Enter organization name:
+          <input
+            type="text"
+            value={inputValue}
+            onChange={(e) => {
+              e.preventDefault();
+              setInputValue(e.target.value);
+            }}
+          />
+        </label>
+        <input type="submit" />
+      </form>
       <MemberTable>
-        {filtered.map((member) => (
-          <MemberTableRow member={member} />
+        {members.map((member) => (
+          <MemberTableRow key={member.id} member={member} />
         ))}
       </MemberTable>
     </>
