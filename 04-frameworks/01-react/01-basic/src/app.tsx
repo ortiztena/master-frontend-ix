@@ -19,7 +19,7 @@ export const App = () => {
   const getMembers = (inputValue) => {
     fetch(`https://api.github.com/orgs/${inputValue}/members`)
       .then((response) => response.json())
-      .then((list) => setMembers(list));
+      .then(setMembers);
   };
 
   return (
