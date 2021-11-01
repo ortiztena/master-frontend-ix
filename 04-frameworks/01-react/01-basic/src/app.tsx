@@ -2,23 +2,24 @@ import React from "react";
 import { MemberEntity } from "./member-model";
 import { MemberTableRow } from "./member-table-row";
 import { MemberTable } from "./members-table";
+import { handleFetchJson } from "./utils";
 
 export const App = () => {
   const [members, setMembers] = React.useState<MemberEntity[]>([]);
-  const [inputValue, setInputValue] = React.useState("lemoncode");
+  const [inputValue, setInputValue] = React.useState<string>("lemoncode");
+
+  React.useEffect(() => {
+    getMembers(inputValue);
+  }, []);
 
   const handleSubmit = (event) => {
     event.preventDefault();
     getMembers(inputValue);
   };
 
-  React.useEffect(() => {
-    getMembers(inputValue);
-  }, []);
-
   const getMembers = (inputValue) => {
     fetch(`https://api.github.com/orgs/${inputValue}/members`)
-      .then((response) => response.json())
+      .then(handleFetchJson)
       .then(setMembers);
   };
 
