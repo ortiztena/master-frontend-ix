@@ -7,6 +7,15 @@ import { handleFetchJson } from "./utils";
 export const App = () => {
   const [members, setMembers] = React.useState<MemberEntity[]>([]);
   const [inputValue, setInputValue] = React.useState<string>("lemoncode");
+  const [inputFilter, setInputFilter] = React.useState<string>("");
+  const [filtered, setFiltered] = React.useState<MemberEntity[]>([]);
+
+  React.useEffect(() => {
+    const filteredList = members.filter((member) =>
+      member.login.includes(inputFilter)
+    );
+    setFiltered(filteredList);
+  }, [members, inputFilter]);
 
   React.useEffect(() => {
     getMembers(inputValue);
@@ -15,6 +24,7 @@ export const App = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     getMembers(inputValue);
+    setInputFilter(""); // setea el filtro a cero
   };
 
   const getMembers = (inputValue) => {
@@ -39,8 +49,15 @@ export const App = () => {
         </label>
         <input type="submit" />
       </form>
+      <form>
+        <label>Members filter: </label>
+        <input
+          value={inputFilter}
+          onChange={(e) => setInputFilter(e.target.value)}
+        />
+      </form>
       <MemberTable>
-        {members.map((member) => (
+        {filtered.map((member) => (
           <MemberTableRow key={member.id} member={member} />
         ))}
       </MemberTable>
