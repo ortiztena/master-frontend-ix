@@ -15,14 +15,14 @@ body {
     display: flex;
     justify-content: space-around;
     padding: 30px;
-    border-bottom: 2px solid black;
   }
 }
 form {
   padding: 5px;
 }
+
 table {
-  padding-top: 20px;
+  width: 100%;
 }
 thead {
   th {
@@ -41,7 +41,7 @@ tbody {
   }
 
   td:nth-child(3) {
-    font-size: 20px;
+    font-size: 15px;
   }
 }
 
