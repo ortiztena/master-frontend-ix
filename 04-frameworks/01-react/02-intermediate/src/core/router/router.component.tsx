@@ -7,16 +7,12 @@ export const AppRouter: React.FC = () => {
   return (
     <HashRouter>
       <Switch>
-        <Route
-          exact={true}
-          path={switchRoutes.employeeList}
-          component={EmployeeListScene}
-        />
-        <Route
-          exact={true}
-          path={switchRoutes.employeeDetail}
-          component={EmployeeScene}
-        />
+        <Route exact={true} path={switchRoutes.employeeList}>
+          <EmployeeListScene />
+        </Route>
+        <Route exact={true} path={switchRoutes.employeeDetail}>
+          <EmployeeScene />
+        </Route>
       </Switch>
     </HashRouter>
   );

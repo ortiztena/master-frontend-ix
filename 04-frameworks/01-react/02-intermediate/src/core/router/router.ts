@@ -1,11 +1,15 @@
 import { generatePath } from 'react-router-dom';
 
 interface SwitchRoutes {
+  root: string;
+  login: string;
   employeeList: string;
   employeeDetail: string;
 }
 
 export const switchRoutes: SwitchRoutes = {
+  root: '/',
+  login: '/login',
   employeeList: '/employees-list',
   employeeDetail: '/employee/:id',
 };
