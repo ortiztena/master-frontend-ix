@@ -6,8 +6,13 @@ module.exports = merge(
   {},
   {
     context: helpers.resolveFromRootPath('src'),
+
     resolve: {
       extensions: ['.js', '.ts', '.tsx'],
+      "paths": {
+        core: helpers.resolveFromRootPath('src/core'),
+        scenes: helpers.resolveFromRootPath('src/scenes'),
+    },
     },
     entry: {
       app: ['regenerator-runtime/runtime', './index.tsx'],
