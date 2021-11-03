@@ -21,8 +21,14 @@ export const App = () => {
     getMembers(inputValue);
   }, []);
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const inputRef = React.useRef<HTMLInputElement>();
+
+  React.useEffect(() => {
+    inputRef.current.focus();
+  }, []);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
     getMembers(inputValue);
     setInputFilter(""); // setea el filtro a cero
   };
@@ -39,10 +45,10 @@ export const App = () => {
         <label>
           Enter organization name:
           <input
+            ref={inputRef}
             type="text"
             value={inputValue}
             onChange={(e) => {
-              e.preventDefault();
               setInputValue(e.target.value);
             }}
           />
