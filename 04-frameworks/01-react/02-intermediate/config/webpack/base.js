@@ -13,6 +13,7 @@ module.exports = merge(
         core: helpers.resolveFromRootPath('src/core'),
         scenes: helpers.resolveFromRootPath('src/scenes'),
         pods: helpers.resolveFromRootPath('src/pods'),
+        layout: helpers.resolveFromRootPath('src/layout'),
     },
     },
     entry: {
