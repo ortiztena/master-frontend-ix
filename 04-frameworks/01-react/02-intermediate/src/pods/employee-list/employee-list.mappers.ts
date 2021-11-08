@@ -7,4 +7,5 @@ const mapEmployeeToVM = (data: am.Employee): vm.Employee => ({
   login: data.login,
   id: data.id,
   avatar_url: data.url,
+  node_id: data.node_id,
 })
