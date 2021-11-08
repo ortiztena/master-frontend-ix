@@ -14,6 +14,7 @@ module.exports = merge(
         scenes: helpers.resolveFromRootPath('src/scenes'),
         pods: helpers.resolveFromRootPath('src/pods'),
         layout: helpers.resolveFromRootPath('src/layout'),
+        common: helpers.resolveFromRootPath('src/common'),
     },
     },
     entry: {

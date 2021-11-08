@@ -6,14 +6,17 @@ import { Employee } from './employee-list.vm';
 
 export const EmployeeListContainer: React.FC = () => {
   const [list, setList] = React.useState<Employee[]>([]);
-  const [inputValue, setInputValue] = React.useState<string>('lemoncode');
 
-  React.useEffect(() => {
-    getEmployeeList(inputValue)
+  const retrieveEmployees = (searchTerm: string) => {
+    getEmployeeList(searchTerm)
       .then(mapEmployeeListToVM)
       .then(setList);
-  }, []);
+  };
 
-  //employeeList
-  return <EmployeeList list={list} />;
+  // No muestra el cuadro de texto, BasicTextFields, ni le pasa las props.
+  return (
+    <>
+      <EmployeeList list={list} onSearch={retrieveEmployees} />
+    </>
+  );
 };
