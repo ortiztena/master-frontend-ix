@@ -13,7 +13,6 @@ export const EmployeeListContainer: React.FC = () => {
       .then(setList);
   };
 
-  // No muestra el cuadro de texto, BasicTextFields, ni le pasa las props.
   return (
     <>
       <EmployeeList list={list} onSearch={retrieveEmployees} />
