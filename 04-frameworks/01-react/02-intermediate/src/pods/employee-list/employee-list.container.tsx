@@ -20,6 +20,10 @@ export const EmployeeListContainer: React.FC = () => {
     setSelected(id);
   };
 
+  const handleClose = () => {
+    setSelected(null);
+  };
+
   return (
     <>
       <EmployeeList
@@ -29,8 +33,8 @@ export const EmployeeListContainer: React.FC = () => {
       />
       {selected && (
         <>
-          <Dialog open={!!selected} onClose={null}>
-            <DialogTitle> Edit Employee</DialogTitle>
+          <Dialog open={!!selected} onClose={handleClose}>
+            <DialogTitle> Employee: {selected}</DialogTitle>
             <DialogContent>
               <EmployeeContainer id={selected} />
             </DialogContent>
