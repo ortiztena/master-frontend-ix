@@ -5,16 +5,22 @@ import { useParams } from 'react-router';
 import { mapEmployeeByIdToVM } from './employee.mappers';
 import { Employee } from './employee.component';
 
-export const employeeContainer: React.FC = () => {
+export const EmployeeContainer: React.FC = () => {
   const [employee, setEmployee] = React.useState<EmployeeInfo>(null);
 
   const { login } = useParams<{ login: string }>();
 
   React.useEffect(() => {
     getEmployeeById(login).then(mapEmployeeByIdToVM);
-    // .then(setEmployee);
+    .then(setEmployee);
   }, []);
 
-  return <Employee employee={employee} onCancel={null} onSave={null} />;
+  return (
+    <>
+      {employee && (
+        <Employee employee={employee} onCancel={null} onSave={null} />
+      )}{' '}
+    </>
+  );
 };
 //api
