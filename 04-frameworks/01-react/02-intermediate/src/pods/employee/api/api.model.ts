@@ -26,9 +26,9 @@ export interface Employee {
   bio: null;
   twitter_username: null;
   public_repos: number;
-  public_gist: number;
-  followers: 28;
-  following: 26;
+  public_gists: number;
+  followers: number;
+  following: number;
   created_at: string;
   updated_at: string;
 

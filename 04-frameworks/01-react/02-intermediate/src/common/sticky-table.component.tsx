@@ -30,13 +30,14 @@ const columns: col[] = [
 
 interface Props {
   list: Employee[];
+  onSelect: (login: string) => void;
 }
 
 export const StickyHeadTable: React.FC<Props> = props => {
-  const { list } = props;
+  const { list, onSelect } = props;
   const classes = useStyles();
   const [page, setPage] = React.useState(0);
-  const [rowsPerPage, setRowsPerPage] = React.useState(5);
+  const [rowsPerPage, setRowsPerPage] = React.useState(10);
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
@@ -50,7 +51,7 @@ export const StickyHeadTable: React.FC<Props> = props => {
   return (
     <Paper className={classes.root}>
       <TableContainer className={classes.container}>
-        <Table aria-label="sticky table">
+        <Table stickyHeader aria-label="sticky table">
           <TableHead>
             <TableRow>
               {columns.map(column => (
@@ -69,7 +70,13 @@ export const StickyHeadTable: React.FC<Props> = props => {
               .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
               .map(row => {
                 return (
-                  <TableRow hover role="checkbox" tabIndex={-1} key={row.id}>
+                  <TableRow
+                    hover
+                    role="checkbox"
+                    tabIndex={-1}
+                    key={row.id}
+                    onClick={() => onSelect(row.login)}
+                  >
                     {columns.map(column => {
                       const value = row[column.id];
                       return (

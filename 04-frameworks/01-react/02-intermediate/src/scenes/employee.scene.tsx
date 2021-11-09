@@ -1,12 +1,15 @@
-import { routes } from 'core/router/routes';
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { EmployeeContainer } from 'pods/employee';
+import { AppLayout } from 'layout';
+import { useParams } from 'react-router-dom';
 
 export const EmployeeScene: React.FC = () => {
+  const { id } = useParams<{ id: string }>();
+
   return (
     <>
-      <h1>Employee Scene!</h1>
-      <Link to={routes.employeeList}>Back to employee list</Link>
+      <AppLayout />
+      <EmployeeContainer id={id} />
     </>
   );
 };

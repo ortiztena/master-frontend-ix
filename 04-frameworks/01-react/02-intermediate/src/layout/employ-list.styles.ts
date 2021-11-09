@@ -6,9 +6,6 @@ export const useStyles = makeStyles({
     margin: '0 auto',
     width: '70%',
   },
-  tablehead: {
-    background: '#1212',
-  },
   container: {
     maxHeight: 330,
   },

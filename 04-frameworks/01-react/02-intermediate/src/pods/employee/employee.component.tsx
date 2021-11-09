@@ -5,11 +5,10 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import { EmployeeInfo } from './employee.vm';
+import { Data } from './components/data.component';
 
 interface Props {
   employee: EmployeeInfo;
-  onSave: (employee: EmployeeInfo) => void;
-  onCancel: () => void;
 }
 
 interface TabPanelProps {
@@ -39,20 +38,20 @@ function TabPanel(props: TabPanelProps) {
 }
 
 export const Employee: React.FC<Props> = props => {
-  const { employee, onSave, onCancel } = props;
+  const { employee } = props;
 
   const [tab, setTab] = React.useState(0);
   return (
     <>
       <AppBar position="static">
-        <Tabs value={tab} onChange={null}>
+        <Tabs value={tab}>
           <Tab label="Datos" />
           <Tab label="Proyectos" />
           <Tab label="Informes" />
         </Tabs>
       </AppBar>
       <TabPanel value={tab} index={0}>
-        <>{employee.name}</>
+        <Data employee={employee} />
       </TabPanel>
       <TabPanel value={tab} index={1}>
         <h3>Hello from projects tab</h3>
