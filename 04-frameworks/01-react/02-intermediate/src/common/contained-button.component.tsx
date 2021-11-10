@@ -14,11 +14,3 @@ export const ContainedButton: React.FC<Props> = props => {
     </Button>
   );
 };
-
-// interface Props { }
-
-// export const TemplateComponent: React.FC<Props> = (props) => {
-//   const { children } = props;
-
-//   return <></>
-// }
