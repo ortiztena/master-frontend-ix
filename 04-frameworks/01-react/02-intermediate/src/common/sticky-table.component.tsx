@@ -41,6 +41,9 @@ export const useStyles = makeStyles({
   container: {
     maxHeight: 330,
   },
+  row: {
+    '&:hover': { cursor: 'pointer' },
+  },
 });
 
 export const StickyHeadTable: React.FC<Props> = props => {
@@ -81,6 +84,7 @@ export const StickyHeadTable: React.FC<Props> = props => {
               .map(row => {
                 return (
                   <TableRow
+                    className={classes.row}
                     hover
                     role="checkbox"
                     tabIndex={-1}
