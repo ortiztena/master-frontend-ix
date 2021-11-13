@@ -8,7 +8,6 @@ export const EmployeeScene: React.FC = () => {
 
   return (
     <>
-      <AppLayout />
       <EmployeeContainer id={id} />
     </>
   );
