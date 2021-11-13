@@ -1,5 +1,31 @@
-import * as React from 'react';
+import React from 'react';
+import { StylesProvider } from '@material-ui/styles';
+import { setValidatorsMessagesToSpanish } from 'core/i18n';
+import { RouterComponent } from 'core/router';
+import { ThemeProviderComponent } from 'core/theme';
+import { AuthProvider } from 'common-app/auth';
+import {
+  SnackbarComponent,
+  SnackbarProvider,
+  SpinnerComponent,
+} from 'common/components';
 
-export const App: React.FunctionComponent = () => {
-  return <h1>05-Testing / 01 React</h1>;
+setValidatorsMessagesToSpanish();
+
+const App: React.FunctionComponent = () => {
+  return (
+    <StylesProvider injectFirst>
+      <ThemeProviderComponent>
+        <AuthProvider>
+          <SnackbarProvider>
+            <SpinnerComponent />
+            <RouterComponent />
+            <SnackbarComponent />
+          </SnackbarProvider>
+        </AuthProvider>
+      </ThemeProviderComponent>
+    </StylesProvider>
+  );
 };
+
+export default App;
