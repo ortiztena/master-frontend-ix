@@ -3,7 +3,7 @@ import * as viewModel from './project.vm';
 import { mapProjectFromApiToVm } from './project.mapper';
 
 describe('project mapper spec', () => {
-  it('should return a clone object with "viewModel" interface', () => {
+  it('should return "viewModel" copy interface', () => {
     // Arrange
     const apiData: apiModel.Project = {
       id: '01',
@@ -11,7 +11,7 @@ describe('project mapper spec', () => {
       externalId: 'test external id',
       comments: 'test comment',
       isActive: true,
-      employees: [{ id: '02', isAssigned: false, employeeName: 'Jane' }],
+      employees: [{ id: '02', isAssigned: false, employeeName: 'Jason' }],
     };
 
     // Act
@@ -24,7 +24,7 @@ describe('project mapper spec', () => {
       externalId: 'test external id',
       comments: 'test comment',
       isActive: true,
-      employees: [{ id: '02', isAssigned: false, employeeName: 'Jane' }],
+      employees: [{ id: '02', isAssigned: false, employeeName: 'Jason' }],
     });
   });
 })
