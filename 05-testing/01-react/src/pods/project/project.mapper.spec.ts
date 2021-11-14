@@ -7,7 +7,7 @@ describe('project mapper spec', () => {
     // Arrange
     const apiData: apiModel.Project = {
       id: '01',
-      name: 'Mike',
+      name: 'Peter',
       externalId: 'test external id',
       comments: 'test comment',
       isActive: true,
@@ -20,7 +20,7 @@ describe('project mapper spec', () => {
     // Assert
     expect(result).toEqual<viewModel.Project>({
       id: '01',
-      name: 'Mike',
+      name: 'Peter',
       externalId: 'test external id',
       comments: 'test comment',
       isActive: true,
@@ -32,7 +32,7 @@ describe('project mapper spec', () => {
     // Arrange
     const apiData: apiModel.Project = {
       id: '01',
-      name: 'Mike',
+      name: 'Peter',
       comments: 'test comment',
       isActive: true,
       employees: [{ id: '02', isAssigned: false, employeeName: 'Jane' }],
@@ -44,7 +44,7 @@ describe('project mapper spec', () => {
     // Assert
     expect(result).toEqual<viewModel.Project>({
       id: '01',
-      name: 'Mike',
+      name: 'Peter',
       comments: 'test comment',
       isActive: true,
       employees: [{ id: '02', isAssigned: false, employeeName: 'Jane' }],
@@ -55,7 +55,7 @@ describe('project mapper spec', () => {
     // Arrange
     const apiData: apiModel.Project = {
       id: '01',
-      name: 'Mike',
+      name: 'Peter',
       externalId: 'test external id',
       isActive: true,
       employees: [{ id: '02', isAssigned: false, employeeName: 'Jane' }],
@@ -67,7 +67,7 @@ describe('project mapper spec', () => {
     // Assert
     expect(result).toEqual<viewModel.Project>({
       id: '01',
-      name: 'Mike',
+      name: 'Peter',
       externalId: 'test external id',
       isActive: true,
       employees: [{ id: '02', isAssigned: false, employeeName: 'Jane' }],
@@ -78,7 +78,7 @@ describe('project mapper spec', () => {
     // Arrange
     const apiData: apiModel.Project = {
       id: '01',
-      name: 'Mike',
+      name: 'Peter',
       externalId: 'test external id',
       comments: 'test comment',
       isActive: true,
@@ -91,7 +91,7 @@ describe('project mapper spec', () => {
     // Assert
     expect(result).toEqual<viewModel.Project>({
       id: '01',
-      name: 'Mike',
+      name: 'Peter',
       externalId: 'test external id',
       comments: 'test comment',
       isActive: true,
@@ -243,7 +243,7 @@ describe('project mapper spec', () => {
     // Arrange
     const apiData: apiModel.Project = {
       id: '01',
-      name: 'Mike',
+      name: 'Peter',
       externalId: 'test external id',
       comments: 'test comment',
       isActive: true,
@@ -256,7 +256,7 @@ describe('project mapper spec', () => {
     // Assert
     expect(result).toEqual<viewModel.Project>({
       id: '01',
-      name: 'Mike',
+      name: 'Peter',
       externalId: 'test external id',
       comments: 'test comment',
       isActive: true,
@@ -268,7 +268,7 @@ describe('project mapper spec', () => {
     // Arrange
     const apiData: apiModel.Project = {
       id: '01',
-      name: 'Mike',
+      name: 'Peter',
       externalId: 'test external id',
       comments: 'test comment',
       isActive: true,
@@ -285,7 +285,7 @@ describe('project mapper spec', () => {
     // Assert
     expect(result).toEqual<viewModel.Project>({
       id: '01',
-      name: 'Mike',
+      name: 'Peter',
       externalId: 'test external id',
       comments: 'test comment',
       isActive: true,
@@ -301,7 +301,7 @@ describe('project mapper spec', () => {
     // Arrange
     const apiData: apiModel.Project = {
       id: '01',
-      name: 'Mike',
+      name: 'Peter',
       externalId: 'test external id',
       comments: 'test comment',
       isActive: true,
@@ -318,7 +318,7 @@ describe('project mapper spec', () => {
     // Assert
     expect(result).toEqual<viewModel.Project>({
       id: '01',
-      name: 'Mike',
+      name: 'Peter',
       externalId: 'test external id',
       comments: 'test comment',
       isActive: true,
