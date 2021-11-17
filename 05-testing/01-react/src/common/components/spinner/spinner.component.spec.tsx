@@ -1,10 +1,19 @@
-import React from 'react';
+import * as React from 'react';
 import { render, screen } from '@testing-library/react';
 import { SpinnerComponent } from './spinner.component';
-import userEvent from '@testing-library/user-event';
+import * as mocked from 'react-promise-tracker/lib/trackerHook';
 
-describe(' # spinner.component spec', () => {
+describe('Spinner.component spec', () => {
   it('', () => {
-    // Assert
+    //   // Arrange
+    //   const promiseTrackerStub = jest
+    //     .spyOn(mocked, 'usePromiseTracker')
+    //     .mockImplementation(() => ({ promiseInProgress: true }));
+    //   // Act
+    //   render(<SpinnerComponent />);
+    //   const presentation = screen.findByRole('presentation');
+    //   // Assert
+    //   // expect(promiseTrackerStub).toHaveBeenCalled();
+    //   expect(presentation).toBeInTheDocument();
   });
 });
