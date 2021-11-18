@@ -15,7 +15,7 @@ describe('Login specs', () => {
   })
 
 
-  it('should have input user / password when type on it', () => {
+  it('should have input user / password when type on iit', () => {
     // Arrange
     const user = 'admin';
     const password = 'test';
