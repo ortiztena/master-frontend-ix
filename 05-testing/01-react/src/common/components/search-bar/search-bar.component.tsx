@@ -13,17 +13,17 @@ interface Props {
   className?: string;
 }
 
-export const SearchBarComponent: React.FunctionComponent<Props> = props => {
+export const SearchBarComponent: React.FunctionComponent<Props> = (props) => {
   const { search, onSearch, labels, className } = props;
 
   return (
     <TextField
       className={className}
       value={search}
-      onChange={e => onSearch(e.target.value)}
+      onChange={(e) => onSearch(e.target.value)}
       placeholder={labels.placeholder}
       InputProps={{
-        startAdornment: <SearchIcon />,
+        startAdornment: <SearchIcon aria-label="Search icon" />,
       }}
     />
   );
