@@ -5,3 +5,14 @@ export const root = css`
   flex-direction: column;
   justify-content: center;
 `;
+
+export const card = css`
+  root: {
+    maxWidth: 345,
+  }
+`
+export const media = css`
+media: {
+    height: 140,
+  }
+`

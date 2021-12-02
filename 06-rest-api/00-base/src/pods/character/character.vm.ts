@@ -6,10 +6,16 @@ export interface CharacterVm {
   type: string;
   gender: string;
   image: string;
-  comment?: string;
+  // comment?: string;
 }
 
-// export const createEmptyComment = (character): CharacterVm => ({
-//   ...character,
-//   comment: '',
-// });
+export const createEmptyCharacterVm = (): CharacterVm => ({
+  id: 0,
+  name: '',
+  status: '',
+  species: '',
+  type: '',
+  gender: '',
+  image: '',
+  // comment: '',
+});

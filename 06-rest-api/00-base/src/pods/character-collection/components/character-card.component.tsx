@@ -13,7 +13,7 @@ import * as classes from './character-card.styles';
 
 interface Props {
   character: CharacterEntityVm;
-  onEdit: (id: string) => void;
+  onEdit: (id: number) => void;
 }
 
 export const CharacterCard: React.FunctionComponent<Props> = (props) => {

@@ -13,8 +13,8 @@ export const CharacterCollectionContainer = () => {
     loadCharacterCollection();
   }, []);
 
-  const handleEdit = (id: string) => {
-    history.push(linkRoutes.editCharacter(id));
+  const handleEdit = (id: number) => {
+    history.push(linkRoutes.editCharacter(`${id}`));
   };
 
   return (
