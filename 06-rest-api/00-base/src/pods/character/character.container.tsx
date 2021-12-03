@@ -5,15 +5,20 @@ import { CharacterVm, createEmptyCharacterVm } from './character.vm';
 import { mapCharacterFromApiToVm } from './character.mappers';
 import { CharacterComponent } from './character.component';
 
-export const CharacterContainer: React.FunctionComponent = (props) => {
+interface idParams {
+  id: string;
+}
+
+export const CharacterContainer: React.FunctionComponent = () => {
   const [character, setCharacter] = React.useState<CharacterVm>(
     createEmptyCharacterVm()
   );
 
-  const { id } = useParams();
+  const { id } = useParams<idParams>();
 
   const handleLoadCharacter = async () => {
-    const apiCharacter = await api.getCharacter(id);
+    console.log(id);
+    const apiCharacter = await api.getCharacter(Number(id));
     setCharacter(mapCharacterFromApiToVm(apiCharacter));
   };
 
