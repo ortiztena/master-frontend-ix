@@ -22,11 +22,11 @@ export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
 
   return (
     <>
-      <h1>Nombre:</h1>
+      <h1>Nombre: {character.name}</h1>
       <ul>
-        <li>Status: </li>
-        <li>Species: </li>
-        <li>comment: </li>
+        <li>Status: {character.status}</li>
+        <li>Species: {character.species}</li>
+        <li>comment: {character.gender}</li>
       </ul>
     </>
   );
