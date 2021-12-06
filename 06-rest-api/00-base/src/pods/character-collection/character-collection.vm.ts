@@ -6,4 +6,5 @@ export interface CharacterEntityVm {
     type: string;
     gender: string;
     image: string;
+    comment?: string;
 }

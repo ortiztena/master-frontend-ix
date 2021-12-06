@@ -11,4 +11,5 @@ export const mapFromApiToVm = (
     type: character.type,
     gender: character.gender,
     image: character.image,
+    comment: character.comment,
 });

@@ -21,7 +21,3 @@ export interface Character {
   comment?: string;
 
 }
-
-// export interface Character extends baseCharacter {
-//   comment: string;
-// }

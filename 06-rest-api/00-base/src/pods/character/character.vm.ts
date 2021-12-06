@@ -6,7 +6,7 @@ export interface CharacterVm {
   type: string;
   gender: string;
   image: string;
-  // comment?: string;
+  comment?: string;
 }
 
 export const createEmptyCharacterVm = (): CharacterVm => ({
@@ -17,5 +17,5 @@ export const createEmptyCharacterVm = (): CharacterVm => ({
   type: '',
   gender: '',
   image: '',
-  // comment: '',
+  comment: '',
 });
