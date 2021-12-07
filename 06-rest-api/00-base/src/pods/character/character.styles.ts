@@ -4,6 +4,7 @@ export const root = css`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  max-width: 350px;
 `;
 
 export const card = css`
