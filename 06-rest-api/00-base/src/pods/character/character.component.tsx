@@ -8,12 +8,13 @@ import { saveComment } from './api';
 
 interface Props {
   character: CharacterVm;
-  // onSave: (character: CharacterVm) => void;
+  onChange: (comment: string) => void;
   // onSubmit: (character: CharacterVm) => void;
 }
 
 export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
   const { character } = props;
+  const [comment, setComment] = React.useState<string>(character.comment);
 
   return (
     <>
@@ -21,16 +22,20 @@ export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
       <ul>
         <li>Status: {character.status}</li>
         <li>Species: {character.species}</li>
-        <li>comment: {character.comment}</li>
+        <li>comment: {comment}</li>
       </ul>
       <Formik
-        onSubmit={(e) => saveComment(e.id, e.comment)}
+        onSubmit={(e) => saveComment(e.id, comment)}
         initialValues={character}
         enableReinitialize={true}
       >
         {() => (
           <Form className={classes.root}>
-            <TextFieldComponent name="comment" label="Comment" />
+            <TextFieldComponent
+              name="comment"
+              label="Comment"
+              onChange={(e) => setComment(e.target.value)}
+            />
             <Button type="submit" variant="contained" color="primary">
               Save
             </Button>
