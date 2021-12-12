@@ -8,13 +8,16 @@ import { saveComment } from './api';
 
 interface Props {
   character: CharacterVm;
-  onChange: (comment: string) => void;
+  // onChange: (comment: string) => void;
   // onSubmit: (character: CharacterVm) => void;
 }
 
 export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
   const { character } = props;
   const [comment, setComment] = React.useState<string>(character.comment);
+  // const loadComment = () => {
+
+  // }
 
   return (
     <>
@@ -22,7 +25,10 @@ export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
       <ul>
         <li>Status: {character.status}</li>
         <li>Species: {character.species}</li>
-        <li>comment: {comment}</li>
+        <li>
+          Comment: {character.comment}
+          {comment}
+        </li>
       </ul>
       <Formik
         onSubmit={(e) => saveComment(e.id, comment)}
@@ -32,6 +38,7 @@ export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
         {() => (
           <Form className={classes.root}>
             <TextFieldComponent
+              value={comment}
               name="comment"
               label="Comment"
               onChange={(e) => setComment(e.target.value)}
