@@ -10,4 +10,6 @@ export const saveComment = async (id: number, fieldtext: string): Promise<void> 
   mockCharacter.find((c) => c.id === id).comment = fieldtext
 };
 
-// customCharacter.comment ? customCharacter : { ...customCharacter, comment: '' }
+export const saveCharacter = async (character: Character): Promise<boolean> => {
+  return true;
+};

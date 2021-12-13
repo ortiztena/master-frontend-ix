@@ -14,6 +14,7 @@ export const card = css`
 `
 export const media = css`
 media: {
-    height: 140,
+    height: 140px,
+    width: 100px,
   }
 `
