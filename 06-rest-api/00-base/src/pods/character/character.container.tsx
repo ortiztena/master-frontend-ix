@@ -17,7 +17,6 @@ export const CharacterContainer: React.FunctionComponent = () => {
   const { id } = useParams<idParams>();
 
   const handleLoadCharacter = async () => {
-    console.log(id);
     const apiCharacter = await api.getCharacter(Number(id));
     setCharacter(mapCharacterFromApiToVm(apiCharacter));
   };

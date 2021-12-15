@@ -7,6 +7,7 @@ import * as classes from './character.styles';
 import * as api from './api';
 import { mapCharacterFromVmToApi } from './character.mappers';
 import { useHistory } from 'react-router-dom';
+// import { saveComment } from './api';
 
 interface Props {
   character: CharacterVm;
@@ -22,6 +23,8 @@ export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
 
   const handleSave = async (character: CharacterVm, comment: string) => {
     const apiCharacter = mapCharacterFromVmToApi(character, comment);
+    // saveComment(apiCharacter);
+
     const success = await api.saveCharacter(apiCharacter);
     if (success) {
       history.goBack();
