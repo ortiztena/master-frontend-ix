@@ -8,9 +8,7 @@ interface Props {
   onEdit: (id: number) => void;
 }
 
-export const CharacterCollectionComponent: React.FunctionComponent<Props> = (
-  props
-) => {
+export const CharacterCollectionComponent: React.FC<Props> = (props) => {
   const { characterCollection, onEdit } = props;
 
   return (

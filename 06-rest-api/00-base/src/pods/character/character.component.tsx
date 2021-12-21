@@ -7,7 +7,6 @@ import * as classes from './character.styles';
 import * as api from './api';
 import { mapCharacterFromVmToApi } from './character.mappers';
 import { useHistory } from 'react-router-dom';
-// import { saveComment } from './api';
 
 interface Props {
   character: CharacterVm;
@@ -15,7 +14,7 @@ interface Props {
   // onSubmit: (character: CharacterVm) => void;
 }
 
-export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
+export const CharacterComponent: React.FC<Props> = (props) => {
   const { character } = props;
   const [comment, setComment] = React.useState<string>(character.comment);
 
@@ -23,7 +22,6 @@ export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
 
   const handleSave = async (character: CharacterVm, comment: string) => {
     const apiCharacter = mapCharacterFromVmToApi(character, comment);
-    // saveComment(apiCharacter);
 
     const success = await api.saveCharacter(apiCharacter);
     if (success) {
@@ -36,12 +34,17 @@ export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
   return (
     <>
       <Card className={classes.root}>
-        <h1>Nombre: {character.name}</h1>
+        <h1>Name: {character.name}</h1>
         <ul>
+          <img
+            className={classes.media}
+            src={character.image}
+            alt={character.name}
+          />
           <li>Status: {character.status}</li>
           <li>Species: {character.species}</li>
           <li>Gender: {character.gender}</li>
-          <img src={character.image} alt={character.name} />
+
           <li>Comment: {comment}</li>
         </ul>
       </Card>

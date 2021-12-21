@@ -1,10 +1,10 @@
+import axios from 'axios';
 import { CharacterEntityApi } from './character-collection.api-model';
-import { mockCharacterCollection } from './character-collection.mock-data';
 
-const characterCollection = [...mockCharacterCollection];
+const characterCollection = '/api/results';
 
 export const getCharacterCollection = async (): Promise<CharacterEntityApi[]> => {
-    return characterCollection;
+    return axios.get(characterCollection).then(res => res.data);
 };
 
 
