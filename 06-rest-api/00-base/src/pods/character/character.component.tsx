@@ -1,7 +1,7 @@
 import React from 'react';
 import { Formik, Form } from 'formik';
 import { TextFieldComponent } from 'common/components';
-import { Button, Card, withWidth } from '@material-ui/core';
+import { Button, Card } from '@material-ui/core';
 import { CharacterVm } from './character.vm';
 import * as classes from './character.styles';
 import * as api from './api';
@@ -17,6 +17,10 @@ interface Props {
 export const CharacterComponent: React.FC<Props> = (props) => {
   const { character } = props;
   const [comment, setComment] = React.useState<string>(character.comment);
+
+  React.useEffect(() => {
+    setComment(character.comment);
+  }, [character.comment]);
 
   const history = useHistory();
 
@@ -44,7 +48,6 @@ export const CharacterComponent: React.FC<Props> = (props) => {
           <li>Status: {character.status}</li>
           <li>Species: {character.species}</li>
           <li>Gender: {character.gender}</li>
-
           <li>Comment: {comment}</li>
         </ul>
       </Card>

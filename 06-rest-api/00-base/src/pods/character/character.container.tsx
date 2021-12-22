@@ -16,16 +16,16 @@ export const CharacterContainer: React.FunctionComponent = () => {
 
   const { id } = useParams<idParams>();
 
-  const handleLoadCharacter = async () => {
+  const handleLoadCharacter = async (id: string) => {
     const apiCharacter = await api.getCharacter(Number(id));
     setCharacter(mapCharacterFromApiToVm(apiCharacter));
   };
 
   React.useEffect(() => {
     if (id) {
-      handleLoadCharacter();
+      handleLoadCharacter(id);
     }
-  }, []);
+  }, [id]);
 
   return <CharacterComponent character={character} />;
 };
