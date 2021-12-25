@@ -1,12 +1,12 @@
 import 'regenerator-runtime/runtime';
 import express from 'express';
 import path from 'path';
-import { ApolloServer, gql } from 'apollo-server-express';
+import { ApolloServer } from 'apollo-server-express';
 import {
   ApolloServerPluginLandingPageGraphQLPlayground,
   ApolloServerPluginLandingPageDisabled,
 } from 'apollo-server-core';
-import { hotelApi, cityApi } from './api';
+import { characterApi } from './api';
 import { typeDefs, resolvers } from './graphql';
 
 
@@ -29,8 +29,8 @@ const PORT = 3000;
 
   const publicPath = path.resolve(__dirname, './public');
   app.use(express.static(publicPath));
-  app.use('/api/hotels', hotelApi);
-  app.use('/api/cities', cityApi);
+  app.use('/api/characterList', characterApi);
+
 
   app.listen(PORT, () => {
     console.log(`Server running http://localhost:${PORT}`);

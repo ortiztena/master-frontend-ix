@@ -14,14 +14,20 @@ export const typeDefs = gql`
     tripAdvisorRatingUrl: String!
   }
 
-  type City {
-    id: ID!
+  type Character {
+    id:ID!
     name: String!
+    image: String!
+    status: String!
+    species: String!
+    gender: String!
+    comment: String
   }
+ 
 
   type Query {
-    hotels: [Hotel!]!
-    hotel(id: ID!): Hotel!
+    characters: [Character!]!
+    character(id: ID!): Character!
     cities: [City!]!
   }
 

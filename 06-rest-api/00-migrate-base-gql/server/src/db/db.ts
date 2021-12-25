@@ -1,44 +1,19 @@
-import crypto from 'crypto';
-import { createDefaultHotel, mockCities, mockHotels } from './mock-data';
-import { Hotel, HotelEdit, City } from './models';
 
-let hotels = [...mockHotels];
-let cities = [...mockCities];
+import { mockCharacters } from './mock-data';
+import { Character } from './models';
 
-export const getHotelList = async (): Promise<Hotel[]> => hotels;
+let characters = [...mockCharacters];
 
-export const getHotel = async (id: string): Promise<Hotel> =>
-  hotels.find((h) => h.id === id);
 
-export const insertHotel = async (hotelEdit: HotelEdit) => {
-  const newId = crypto.randomBytes(16).toString('hex');
-  hotels = [
-    ...hotels,
-    {
-      ...createDefaultHotel(),
-      ...hotelEdit,
-      id: newId,
-    },
-  ];
-  return newId;
+export const getCharacterList = async (): Promise<Character[]> => characters;
+
+export const getCharacter = async (id: number): Promise<Character> =>
+  characters.find((c) => c.id === id);
+
+
+export const insertComment = async (id: number, sentence: string) => {
+  mockCharacters.find((c) => c.id === id).comment = sentence;
+
 };
 
-export const updateHotel = async (hotelEdit: HotelEdit): Promise<boolean> => {
-  hotels = hotels.map((h) =>
-    h.id === hotelEdit.id
-      ? {
-          ...h,
-          ...hotelEdit,
-        }
-      : h
-  );
 
-  return true;
-};
-
-export const deleteHotel = async (id: string): Promise<boolean> => {
-  hotels = hotels.filter((h) => h.id !== id);
-  return true;
-};
-
-export const getCities = async (): Promise<City[]> => cities;
