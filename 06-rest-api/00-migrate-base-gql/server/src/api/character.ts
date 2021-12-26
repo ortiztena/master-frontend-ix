@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import {
+  Character,
   getCharacter,
   getCharacterList,
   insertComment
@@ -14,13 +15,13 @@ characterApi
   })
 
   .get('/:id', async (req, res) => {
-    const id = req.params.id;
+    const id = parseInt(req.params.id);
     const character = await getCharacter(id);
     res.send(character);
   })
 
   .patch('/:id', async (req, res) => {
     const characterEdit: Character = req.body;
-    await insertComment(characterEdit, sentence);
+    await insertComment(characterEdit.id, characterEdit.comment);
     res.sendStatus(200);
   });

@@ -1,21 +1,19 @@
 import { gql } from 'apollo-server-express';
 
 export const typeDefs = gql`
-  type Hotel {
-    id: ID!
-    type: String!
+
+  type CharacterList {
+    id:Number!
     name: String!
-    address1: String!
-    city: String!
-    hotelRating: Float!
-    shortDescription: String!
-    thumbNailUrl: String!
-    tripAdvisorRating: Float!
-    tripAdvisorRatingUrl: String!
+    image: String!
+  }
+ 
+  type Query {
+    characters: [CharacterList!]!
   }
 
-  type Character {
-    id:ID!
+  input Character {
+    id:Number!
     name: String!
     image: String!
     status: String!
@@ -23,25 +21,12 @@ export const typeDefs = gql`
     gender: String!
     comment: String
   }
- 
 
   type Query {
-    characters: [Character!]!
-    character(id: ID!): Character!
-    cities: [City!]!
-  }
-
-  input HotelInput {
-    id: ID!
-    name: String!
-    address1: String!
-    city: String!
-    hotelRating: Float!
-    shortDescription: String!
+    character: [Character!]!
   }
 
   type Mutation {
-    saveHotel(hotel: HotelInput!): Boolean
-    deleteHotel(id: ID!): Boolean
+    insertComment(character: Character!): Boolean
   }
 `;
