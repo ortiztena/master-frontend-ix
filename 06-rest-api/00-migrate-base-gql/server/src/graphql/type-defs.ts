@@ -3,7 +3,7 @@ import { gql } from 'apollo-server-express';
 export const typeDefs = gql`
 
   type CharacterList {
-    id:Number!
+    id:ID!
     name: String!
     image: String!
   }
@@ -13,7 +13,7 @@ export const typeDefs = gql`
   }
 
   input Character {
-    id:Number!
+    id:ID!
     name: String!
     image: String!
     status: String!
