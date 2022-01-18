@@ -27,6 +27,6 @@ export const typeDefs = gql`
   }
 
   type Mutation {
-    insertComment(character: Character!): Boolean
+    saveComment(id: ID! , sentence: String! ): Boolean
   }
 `;
