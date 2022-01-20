@@ -2,7 +2,7 @@
 import { mockCharacters } from './mock-data';
 import { Character } from './models';
 
-let characters = [...mockCharacters];
+const characters = [...mockCharacters];
 
 
 export const getCharacterList = async (): Promise<Character[]> => characters;

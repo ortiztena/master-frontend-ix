@@ -13,8 +13,8 @@ export const resolvers = {
       const characters = await getCharacterList();
       return characters;
     },
-    character: async (parent, args): Promise<Character> => {
-      const character = await getCharacter(args.id);
+    character: async (id: number): Promise<Character> => {
+      const character = await getCharacter(id);
       return character;
     },
   },
