@@ -13,20 +13,19 @@ export const resolvers = {
       const charactersList = await getCharacterList();
       return charactersList;
     },
-    // character: async (id: number): Promise<Character> => {
-    //   const characterSingle = await getCharacter(id);
-    //   return characterSingle;
-    // },
+    character: async (_, args): Promise<Character> => {
+      const characterSingle = await getCharacter(parseInt(args.id));
+      return characterSingle;
+    }
+
   },
 
-  // Mutation: {
-  //   saveComment: async (id: number, sentence: string): Promise<boolean> => {
-  //     if (id) {
-  //       await insertComment(id, sentence);
-  //     } else {
-  //       await getCharacter(id);
-  //     }
-  //     return true;
-  //   },
-  // },
+  Mutation: {
+    saveComment: async (parent, args): Promise<boolean> => {
+      if (args.character.id) {
+        await insertComment(args.character);
+      }
+      return true;
+    },
+  },
 };

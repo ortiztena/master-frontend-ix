@@ -16,7 +16,7 @@ export const mockCharacters: Character[] = [
       "name": "Citadel of Ricks",
       "url": "https://rickandmortyapi.com/api/location/3"
     },
-    "image": "https://rickandmortyapi.com/api/character/avatar/1.jpeg",
+    "image": 'server/public/thumbnails/1.jpeg',
     "episode": [
       "https://rickandmortyapi.com/api/episode/1",
       "https://rickandmortyapi.com/api/episode/2",
@@ -85,7 +85,7 @@ export const mockCharacters: Character[] = [
       "name": "Citadel of Ricks",
       "url": "https://rickandmortyapi.com/api/location/3"
     },
-    "image": "https://rickandmortyapi.com/api/character/avatar/2.jpeg",
+    "image": "server/public/thumbnails/2.jpeg",
     "episode": [
       "https://rickandmortyapi.com/api/episode/1",
       "https://rickandmortyapi.com/api/episode/2",
@@ -157,7 +157,7 @@ export const mockCharacters: Character[] = [
       "name": "Earth (Replacement Dimension)",
       "url": "https://rickandmortyapi.com/api/location/20"
     },
-    "image": "https://rickandmortyapi.com/api/character/avatar/3.jpeg",
+    "image": "server/public/thumbnails/3.jpeg",
     "episode": [
       "https://rickandmortyapi.com/api/episode/6",
       "https://rickandmortyapi.com/api/episode/7",
@@ -220,7 +220,7 @@ export const mockCharacters: Character[] = [
       "name": "Earth (Replacement Dimension)",
       "url": "https://rickandmortyapi.com/api/location/20"
     },
-    "image": "https://rickandmortyapi.com/api/character/avatar/4.jpeg",
+    "image": "server/public/thumbnails/4.jpeg",
     "episode": [
       "https://rickandmortyapi.com/api/episode/6",
       "https://rickandmortyapi.com/api/episode/7",
@@ -283,7 +283,7 @@ export const mockCharacters: Character[] = [
       "name": "Earth (Replacement Dimension)",
       "url": "https://rickandmortyapi.com/api/location/20"
     },
-    "image": "https://rickandmortyapi.com/api/character/avatar/5.jpeg",
+    "image": "server/public/thumbnails/5.jpeg",
     "episode": [
       "https://rickandmortyapi.com/api/episode/6",
       "https://rickandmortyapi.com/api/episode/7",
@@ -343,7 +343,7 @@ export const mockCharacters: Character[] = [
       "name": "Abadango",
       "url": "https://rickandmortyapi.com/api/location/2"
     },
-    "image": "https://rickandmortyapi.com/api/character/avatar/6.jpeg",
+    "image": "server/public/thumbnails/6.jpeg",
     "episode": ["https://rickandmortyapi.com/api/episode/27"],
     "url": "https://rickandmortyapi.com/api/character/6",
     "created": "2017-11-04T19:50:28.250Z"
@@ -363,7 +363,7 @@ export const mockCharacters: Character[] = [
       "name": "Testicle Monster Dimension",
       "url": "https://rickandmortyapi.com/api/location/21"
     },
-    "image": "https://rickandmortyapi.com/api/character/avatar/7.jpeg",
+    "image": "server/public/thumbnails/7.jpeg",
     "episode": [
       "https://rickandmortyapi.com/api/episode/10",
       "https://rickandmortyapi.com/api/episode/11"
@@ -383,7 +383,7 @@ export const mockCharacters: Character[] = [
       "name": "Citadel of Ricks",
       "url": "https://rickandmortyapi.com/api/location/3"
     },
-    "image": "https://rickandmortyapi.com/api/character/avatar/8.jpeg",
+    "image": "server/public/thumbnails/8.jpeg",
     "episode": ["https://rickandmortyapi.com/api/episode/28"],
     "url": "https://rickandmortyapi.com/api/character/8",
     "created": "2017-11-04T20:03:34.737Z"
@@ -403,7 +403,7 @@ export const mockCharacters: Character[] = [
       "name": "Earth (Replacement Dimension)",
       "url": "https://rickandmortyapi.com/api/location/20"
     },
-    "image": "https://rickandmortyapi.com/api/character/avatar/9.jpeg",
+    "image": "server/public/thumbnails/9.jpeg",
     "episode": ["https://rickandmortyapi.com/api/episode/24"],
     "url": "https://rickandmortyapi.com/api/character/9",
     "created": "2017-11-04T20:06:54.976Z"
@@ -420,7 +420,7 @@ export const mockCharacters: Character[] = [
       "name": "Worldender's lair",
       "url": "https://rickandmortyapi.com/api/location/4"
     },
-    "image": "https://rickandmortyapi.com/api/character/avatar/10.jpeg",
+    "image": "server/public/thumbnails/10.jpeg",
     "episode": ["https://rickandmortyapi.com/api/episode/25"],
     "url": "https://rickandmortyapi.com/api/character/10",
     "created": "2017-11-04T20:19:09.017Z"
@@ -440,7 +440,7 @@ export const mockCharacters: Character[] = [
       "name": "Earth (Replacement Dimension)",
       "url": "https://rickandmortyapi.com/api/location/20"
     },
-    "image": "https://rickandmortyapi.com/api/character/avatar/11.jpeg",
+    "image": "server/public/thumbnails/11.jpeg",
     "episode": ["https://rickandmortyapi.com/api/episode/12"],
     "url": "https://rickandmortyapi.com/api/character/11",
     "created": "2017-11-04T20:20:20.965Z"
@@ -460,7 +460,7 @@ export const mockCharacters: Character[] = [
       "name": "Anatomy Park",
       "url": "https://rickandmortyapi.com/api/location/5"
     },
-    "image": "https://rickandmortyapi.com/api/character/avatar/12.jpeg",
+    "image": "server/public/thumbnails/12.jpeg",
     "episode": ["https://rickandmortyapi.com/api/episode/3"],
     "url": "https://rickandmortyapi.com/api/character/12",
     "created": "2017-11-04T20:32:33.144Z"
@@ -477,7 +477,7 @@ export const mockCharacters: Character[] = [
       "name": "Earth (Replacement Dimension)",
       "url": "https://rickandmortyapi.com/api/location/20"
     },
-    "image": "https://rickandmortyapi.com/api/character/avatar/13.jpeg",
+    "image": "server/public/thumbnails/13.jpeg",
     "episode": ["https://rickandmortyapi.com/api/episode/31"],
     "url": "https://rickandmortyapi.com/api/character/13",
     "created": "2017-11-04T20:33:30.779Z"
@@ -494,7 +494,7 @@ export const mockCharacters: Character[] = [
       "name": "Citadel of Ricks",
       "url": "https://rickandmortyapi.com/api/location/3"
     },
-    "image": "https://rickandmortyapi.com/api/character/avatar/14.jpeg",
+    "image": "server/public/thumbnails/14.jpeg",
     "episode": ["https://rickandmortyapi.com/api/episode/10"],
     "url": "https://rickandmortyapi.com/api/character/14",
     "created": "2017-11-04T20:51:31.373Z"
@@ -511,7 +511,7 @@ export const mockCharacters: Character[] = [
       "name": "Citadel of Ricks",
       "url": "https://rickandmortyapi.com/api/location/3"
     },
-    "image": "https://rickandmortyapi.com/api/character/avatar/15.jpeg",
+    "image": "server/public/thumbnails/15.jpeg",
     "episode": ["https://rickandmortyapi.com/api/episode/10"],
     "url": "https://rickandmortyapi.com/api/character/15",
     "created": "2017-11-04T20:56:13.215Z"
@@ -528,7 +528,7 @@ export const mockCharacters: Character[] = [
       "name": "Earth (Replacement Dimension)",
       "url": "https://rickandmortyapi.com/api/location/20"
     },
-    "image": "https://rickandmortyapi.com/api/character/avatar/16.jpeg",
+    "image": "server/public/thumbnails/16.jpeg",
     "episode": ["https://rickandmortyapi.com/api/episode/15"],
     "url": "https://rickandmortyapi.com/api/character/16",
     "created": "2017-11-04T21:12:45.235Z"
@@ -548,7 +548,7 @@ export const mockCharacters: Character[] = [
       "name": "Anatomy Park",
       "url": "https://rickandmortyapi.com/api/location/5"
     },
-    "image": "https://rickandmortyapi.com/api/character/avatar/17.jpeg",
+    "image": "server/public/thumbnails/17.jpeg",
     "episode": ["https://rickandmortyapi.com/api/episode/3"],
     "url": "https://rickandmortyapi.com/api/character/17",
     "created": "2017-11-04T22:21:24.481Z"
@@ -565,7 +565,7 @@ export const mockCharacters: Character[] = [
       "name": "Citadel of Ricks",
       "url": "https://rickandmortyapi.com/api/location/3"
     },
-    "image": "https://rickandmortyapi.com/api/character/avatar/18.jpeg",
+    "image": "server/public/thumbnails/18.jpeg",
     "episode": [
       "https://rickandmortyapi.com/api/episode/10",
       "https://rickandmortyapi.com/api/episode/28"
@@ -582,7 +582,7 @@ export const mockCharacters: Character[] = [
     "gender": "Male",
     "origin": { "name": "unknown", "url": "" },
     "location": { "name": "unknown", "url": "" },
-    "image": "https://rickandmortyapi.com/api/character/avatar/19.jpeg",
+    "image": "server/public/thumbnails/19.jpeg",
     "episode": ["https://rickandmortyapi.com/api/episode/10"],
     "url": "https://rickandmortyapi.com/api/character/19",
     "created": "2017-11-04T22:28:13.756Z"
@@ -599,7 +599,7 @@ export const mockCharacters: Character[] = [
       "name": "Interdimensional Cable",
       "url": "https://rickandmortyapi.com/api/location/6"
     },
-    "image": "https://rickandmortyapi.com/api/character/avatar/20.jpeg",
+    "image": "server/public/thumbnails/20.jpeg",
     "episode": ["https://rickandmortyapi.com/api/episode/8"],
     "url": "https://rickandmortyapi.com/api/character/20",
     "created": "2017-11-04T22:34:53.659Z"
