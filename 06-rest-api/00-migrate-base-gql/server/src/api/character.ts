@@ -21,7 +21,7 @@ characterApi
   })
 
   .patch('/:id', async (req, res) => {
-    const characterEdit: Character = req.body;
-    await insertComment(characterEdit.id, characterEdit.comment);
+    cons characterId = `${req.params.id}`;
+    await insertComment(characterId);
     res.sendStatus(200);
   });
