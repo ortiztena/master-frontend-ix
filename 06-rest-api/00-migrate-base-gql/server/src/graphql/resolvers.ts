@@ -21,11 +21,13 @@ export const resolvers = {
   },
 
   Mutation: {
-    saveComment: async (parent, args): Promise<boolean> => {
-      if (args.character.id) {
-        await insertComment(args.character);
+    saveComment: async (_, args): Promise<boolean> => {
+
+      if (args.id) {
+        await insertComment(args.id, args.comment);
       }
       return true;
     },
   },
+
 };

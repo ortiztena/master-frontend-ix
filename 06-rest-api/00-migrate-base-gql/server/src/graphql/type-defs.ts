@@ -2,13 +2,13 @@ import { gql } from 'apollo-server-express';
 
 export const typeDefs = gql`
 
-  input CharacterList {
+  type CharacterList {
     id:ID!
     name: String!
     image: String!
   }
 
-  input Character {
+  type Character {
   id: ID!
   name: String!
   image: String!
@@ -24,15 +24,25 @@ export const typeDefs = gql`
     character(id:ID!): Character!
   }
 
-  type Mutation {
-    saveCharacter : (character: Character!)  : Boolean
+  input CharacterInput {
+  
+    comment: String
+  }
+
+ type Mutation {
+     saveComment(id:ID!, comment:String): Boolean
   }
 
 `;
 
 
 
-
+  // id: ID!
+  //   name: String!
+  //   image: String!
+  //   status: String!
+  //   species: String!
+  //   gender: String!
 
 
 // type Mutation {
