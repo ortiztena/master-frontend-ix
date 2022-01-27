@@ -1,7 +1,7 @@
 import {
   getCharacter,
   getCharacterList,
-  insertComment,
+  updateComment,
   Character,
 } from '../db';
 
@@ -23,8 +23,8 @@ export const resolvers = {
   Mutation: {
     saveComment: async (_, args): Promise<boolean> => {
 
-      if (args.id) {
-        await insertComment(args.id, args.comment);
+      if (args.character) {
+        await updateComment(args.character.id, args.character.comment);
       }
       return true;
     },

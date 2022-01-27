@@ -26,11 +26,17 @@ export const typeDefs = gql`
 
   input CharacterInput {
   
-    comment: String
+  id: ID!
+  name: String
+  image: String
+  status: String
+  species: String
+  gender: String
+  comment: String!
   }
 
  type Mutation {
-     saveComment(id:ID!, comment:String): Boolean
+     saveComment(character: CharacterInput!): Boolean
   }
 
 `;

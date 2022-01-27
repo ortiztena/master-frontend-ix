@@ -3,7 +3,7 @@ import {
   Character,
   getCharacter,
   getCharacterList,
-  insertComment
+  updateComment
 } from '../db';
 
 export const characterApi = Router();
@@ -21,8 +21,8 @@ characterApi
   })
 
   .patch('/:id', async (req, res) => {
-    const characterId = parseInt(req.params.id);
-    const character = await getCharacter(characterId)
-    await insertComment(character);
+    // const characterId = parseInt(req.params.id);
+    const characterEdit: Character = req.body
+    await updateComment(characterEdit.id, characterEdit.comment);
     res.sendStatus(200);
   });
