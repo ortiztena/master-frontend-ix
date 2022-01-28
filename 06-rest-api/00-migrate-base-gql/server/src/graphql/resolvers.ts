@@ -3,9 +3,12 @@ import {
   getCharacterList,
   updateComment,
   Character,
+  CharacterEdit
 } from '../db';
 
-
+interface SaveCommentArgs {
+  character: CharacterEdit
+}
 
 export const resolvers = {
   Query: {
@@ -21,10 +24,11 @@ export const resolvers = {
   },
 
   Mutation: {
-    saveComment: async (_, args): Promise<boolean> => {
-
-      if (args.character) {
-        await updateComment(args.character.id, args.character.comment);
+    saveComment: async (parent, args: SaveCommentArgs): Promise<boolean> => {
+      if (args.character.id) {
+        await updateComment(args.character);
+      } else {
+        return false
       }
       return true;
     },

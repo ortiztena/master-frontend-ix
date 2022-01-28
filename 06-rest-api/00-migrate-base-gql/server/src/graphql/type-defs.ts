@@ -9,13 +9,13 @@ export const typeDefs = gql`
   }
 
   type Character {
-  id: ID!
-  name: String!
-  image: String!
-  status: String!
-  species: String!
-  gender: String!
-  comment: String
+    id: ID!
+    name: String!
+    image: String!
+    status: String!
+    species: String!
+    gender: String!
+    comment: String
 }
 
 
@@ -25,14 +25,13 @@ export const typeDefs = gql`
   }
 
   input CharacterInput {
-  
-  id: ID!
-  name: String
-  image: String
-  status: String
-  species: String
-  gender: String
-  comment: String!
+      id: ID!
+      name: String!
+      image: String!
+      status: String!
+      species: String!
+      gender: String!
+      comment: String
   }
 
  type Mutation {
@@ -41,16 +40,3 @@ export const typeDefs = gql`
 
 `;
 
-
-
-  // id: ID!
-  //   name: String!
-  //   image: String!
-  //   status: String!
-  //   species: String!
-  //   gender: String!
-
-
-// type Mutation {
-//   saveComment(character: CharacterInput): Boolean
-// }

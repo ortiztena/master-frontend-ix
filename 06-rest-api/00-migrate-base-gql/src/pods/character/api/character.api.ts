@@ -1,29 +1,20 @@
-import axios from 'axios';
 import { graphQLClient } from 'core/api';
 import { CharacterEntityApi } from 'pods/character-collection/api/character-collection.api-model';
 import { gql } from 'graphql-request'
-// const url = '/api/results/';
 
-// export const getCharacter = async (id: number): Promise<Character> => {
-//   return axios.get(`${url}${id}`).then((res) => res.data)
-// }
 
 interface getCharacterResponse {
   character: CharacterEntityApi
 }
 
-interface CharacterInputResponse {
-  id: number;
-  name: string
-  image: string
-  status: string
-  species: string
-  gender: string
-  comment?: string
-}
 
 interface SaveCharacterResponse {
-  saveCharacter: boolean
+  saveComment: boolean
+}
+
+interface CharacterInput {
+  id: number
+  comment?: string
 }
 
 export const getCharacter = async (id: number): Promise<CharacterEntityApi> => {
@@ -45,15 +36,14 @@ export const getCharacter = async (id: number): Promise<CharacterEntityApi> => {
   return character;
 };
 
-export const saveCharacter = async (character: CharacterInputResponse): Promise<boolean> => {
+export const saveCharacter = async (character: CharacterInput): Promise<boolean> => {
 
-  const query = gql`
-    mutation {
-        saveCharacter($character: CharacterInputResponse) :Boolean 
+  const mutation = gql`
+    mutation ($character: CharacterInput!) {
+        saveComment(character: $character)
+        }
     },
 `
-  const { saveCharacter } = await graphQLClient.request<SaveCharacterResponse>(query, {
-    character,
-  });
-  return saveCharacter;
+  const { saveComment } = await graphQLClient.request<SaveCharacterResponse>(mutation, { character });
+  return saveComment;
 }

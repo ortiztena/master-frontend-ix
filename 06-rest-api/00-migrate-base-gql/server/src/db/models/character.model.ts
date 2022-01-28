@@ -21,3 +21,13 @@ export interface Character {
   comment?: string;
 
 }
+
+export interface CharacterEdit {
+  id: number;
+  name: string
+  image: string
+  status: string
+  species: string
+  gender: string
+  comment?: string
+}
