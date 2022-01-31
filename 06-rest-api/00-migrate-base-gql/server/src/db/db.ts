@@ -12,6 +12,7 @@ interface CharacterInput {
   status: string
   species: string
   gender: string
+  type: string
   comment?: string
 }
 
@@ -21,8 +22,8 @@ export const getCharacterList = async (): Promise<Character[]> => characters;
 export const getCharacter = async (id: number): Promise<Character> =>
   characters.find((c) => c.id === id);
 
-export const updateComment = async (character): Promise<CharacterInput> =>
+export const updateComment = async (character: CharacterInput): Promise<boolean> => {
   mockCharacters.find((c) => c.id == character.id).comment = character.comment;
+  return true
 
-
-
+}

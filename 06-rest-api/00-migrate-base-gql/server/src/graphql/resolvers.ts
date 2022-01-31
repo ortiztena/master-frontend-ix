@@ -25,6 +25,7 @@ export const resolvers = {
 
   Mutation: {
     saveComment: async (parent, args: SaveCommentArgs): Promise<boolean> => {
+
       if (args.character.id) {
         await updateComment(args.character);
       } else {
@@ -34,4 +35,4 @@ export const resolvers = {
     },
   },
 
-};
+}

@@ -15,6 +15,7 @@ export const typeDefs = gql`
     status: String!
     species: String!
     gender: String!
+    type: String
     comment: String
 }
 
@@ -31,6 +32,7 @@ export const typeDefs = gql`
       status: String!
       species: String!
       gender: String!
+      type: String
       comment: String
   }
 

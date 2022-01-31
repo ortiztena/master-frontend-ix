@@ -14,6 +14,12 @@ interface SaveCharacterResponse {
 
 interface CharacterInput {
   id: number
+  name: string
+  image: string
+  status: string
+  species: string
+  gender: string
+  type: string
   comment?: string
 }
 
@@ -27,6 +33,7 @@ export const getCharacter = async (id: number): Promise<CharacterEntityApi> => {
             status
             species
             gender
+            type
             comment
         }
     }
@@ -37,12 +44,12 @@ export const getCharacter = async (id: number): Promise<CharacterEntityApi> => {
 };
 
 export const saveCharacter = async (character: CharacterInput): Promise<boolean> => {
-
+  console.log(character)
   const mutation = gql`
     mutation ($character: CharacterInput!) {
         saveComment(character: $character)
         }
-    },
+    }
 `
   const { saveComment } = await graphQLClient.request<SaveCharacterResponse>(mutation, { character });
   return saveComment;

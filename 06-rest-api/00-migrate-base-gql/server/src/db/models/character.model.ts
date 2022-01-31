@@ -29,5 +29,6 @@ export interface CharacterEdit {
   status: string
   species: string
   gender: string
+  type: string
   comment?: string
 }
