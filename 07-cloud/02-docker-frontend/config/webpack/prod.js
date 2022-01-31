@@ -1,7 +1,7 @@
 const { merge } = require('webpack-merge');
+const Dotenv = require('dotenv-webpack');
 const base = require('./base');
 const helpers = require('./helpers');
-const Dotenv = require('dotenv-webpack');
 
 module.exports = merge(base, {
   mode: 'production',

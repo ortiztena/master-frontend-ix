@@ -25,10 +25,10 @@ module.exports = mergeWithCustomize({
     filename: '[name].js',
   },
   devServer: {
-    inline: true,
+    // inline: true,
     host: 'localhost',
     port: 8080,
-    stats: 'minimal',
+    // stats: 'minimal',
     hot: true,
   },
   plugins: [
