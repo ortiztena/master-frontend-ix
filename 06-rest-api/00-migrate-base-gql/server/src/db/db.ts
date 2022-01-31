@@ -16,7 +16,7 @@ export const getCharacterList = async (): Promise<Character[]> => characters;
 export const getCharacter = async (id: number): Promise<Character> =>
   characters.find((c) => c.id === id);
 
-export const updateComment = async (character): Promise<CharacterInput> =>
+export const updateComment = async (character): Promise<Boolean> =>
 
   mockCharacters.find((c) => c.id === character.id).comment = character.comment;
 
