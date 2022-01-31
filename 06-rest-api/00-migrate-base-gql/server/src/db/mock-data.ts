@@ -8,6 +8,7 @@ export const mockCharacters: Character[] = [
     "species": "Human",
     "type": "",
     "gender": "Male",
+    "comment": "",
     "origin": {
       "name": "Earth (C-137)",
       "url": "https://rickandmortyapi.com/api/location/1"
@@ -80,6 +81,7 @@ export const mockCharacters: Character[] = [
     "species": "Human",
     "type": "",
     "gender": "Male",
+    "comment": "",
     "origin": { "name": "unknown", "url": "" },
     "location": {
       "name": "Citadel of Ricks",
@@ -149,6 +151,7 @@ export const mockCharacters: Character[] = [
     "species": "Human",
     "type": "",
     "gender": "Female",
+    "comment": "",
     "origin": {
       "name": "Earth (Replacement Dimension)",
       "url": "https://rickandmortyapi.com/api/location/20"
@@ -212,6 +215,7 @@ export const mockCharacters: Character[] = [
     "species": "Human",
     "type": "",
     "gender": "Female",
+    "comment": "",
     "origin": {
       "name": "Earth (Replacement Dimension)",
       "url": "https://rickandmortyapi.com/api/location/20"
@@ -275,6 +279,7 @@ export const mockCharacters: Character[] = [
     "species": "Human",
     "type": "",
     "gender": "Male",
+    "comment": "",
     "origin": {
       "name": "Earth (Replacement Dimension)",
       "url": "https://rickandmortyapi.com/api/location/20"
@@ -335,6 +340,7 @@ export const mockCharacters: Character[] = [
     "species": "Alien",
     "type": "",
     "gender": "Female",
+    "comment": "",
     "origin": {
       "name": "Abadango",
       "url": "https://rickandmortyapi.com/api/location/2"
@@ -355,6 +361,7 @@ export const mockCharacters: Character[] = [
     "species": "Human",
     "type": "Genetic experiment",
     "gender": "Male",
+    "comment": "",
     "origin": {
       "name": "Earth (Replacement Dimension)",
       "url": "https://rickandmortyapi.com/api/location/20"
@@ -378,6 +385,7 @@ export const mockCharacters: Character[] = [
     "species": "Human",
     "type": "",
     "gender": "Male",
+    "comment": "",
     "origin": { "name": "unknown", "url": "" },
     "location": {
       "name": "Citadel of Ricks",
@@ -395,6 +403,7 @@ export const mockCharacters: Character[] = [
     "species": "Human",
     "type": "",
     "gender": "Male",
+    "comment": "",
     "origin": {
       "name": "Earth (Replacement Dimension)",
       "url": "https://rickandmortyapi.com/api/location/20"
@@ -415,6 +424,7 @@ export const mockCharacters: Character[] = [
     "species": "Human",
     "type": "Superhuman (Ghost trains summoner)",
     "gender": "Male",
+    "comment": "",
     "origin": { "name": "unknown", "url": "" },
     "location": {
       "name": "Worldender's lair",
@@ -432,6 +442,7 @@ export const mockCharacters: Character[] = [
     "species": "Human",
     "type": "",
     "gender": "Male",
+    "comment": "",
     "origin": {
       "name": "Earth (C-137)",
       "url": "https://rickandmortyapi.com/api/location/1"
@@ -452,6 +463,7 @@ export const mockCharacters: Character[] = [
     "species": "Human",
     "type": "",
     "gender": "Male",
+    "comment": "",
     "origin": {
       "name": "Earth (C-137)",
       "url": "https://rickandmortyapi.com/api/location/1"
@@ -472,6 +484,7 @@ export const mockCharacters: Character[] = [
     "species": "Alien",
     "type": "",
     "gender": "unknown",
+    "comment": "",
     "origin": { "name": "unknown", "url": "" },
     "location": {
       "name": "Earth (Replacement Dimension)",
@@ -489,6 +502,7 @@ export const mockCharacters: Character[] = [
     "species": "Alien",
     "type": "",
     "gender": "Male",
+    "comment": "",
     "origin": { "name": "unknown", "url": "" },
     "location": {
       "name": "Citadel of Ricks",
@@ -506,6 +520,7 @@ export const mockCharacters: Character[] = [
     "species": "Alien",
     "type": "",
     "gender": "Male",
+    "comment": "",
     "origin": { "name": "unknown", "url": "" },
     "location": {
       "name": "Citadel of Ricks",
@@ -523,6 +538,7 @@ export const mockCharacters: Character[] = [
     "species": "Alien",
     "type": "Parasite",
     "gender": "Male",
+    "comment": "",
     "origin": { "name": "unknown", "url": "" },
     "location": {
       "name": "Earth (Replacement Dimension)",
@@ -540,6 +556,7 @@ export const mockCharacters: Character[] = [
     "species": "Human",
     "type": "",
     "gender": "Female",
+    "comment": "",
     "origin": {
       "name": "Earth (C-137)",
       "url": "https://rickandmortyapi.com/api/location/1"
@@ -560,6 +577,7 @@ export const mockCharacters: Character[] = [
     "species": "Human",
     "type": "Human with antennae",
     "gender": "Male",
+    "comment": "",
     "origin": { "name": "unknown", "url": "" },
     "location": {
       "name": "Citadel of Ricks",
@@ -580,6 +598,7 @@ export const mockCharacters: Character[] = [
     "species": "Human",
     "type": "Human with antennae",
     "gender": "Male",
+    "comment": "",
     "origin": { "name": "unknown", "url": "" },
     "location": { "name": "unknown", "url": "" },
     "image": "server/public/thumbnails/19.jpeg",
@@ -594,6 +613,7 @@ export const mockCharacters: Character[] = [
     "species": "Human",
     "type": "Human with ants in his eyes",
     "gender": "Male",
+    "comment": "",
     "origin": { "name": "unknown", "url": "" },
     "location": {
       "name": "Interdimensional Cable",
