@@ -6,6 +6,9 @@ COPY . .
 
 #prepare static files
 FROM base AS build-front
+
+ARG BASE_API_URL
+ENV BASE_API_URL=$BASE_API_URL
 RUN npm ci
 RUN npm run build
 
@@ -19,7 +22,8 @@ COPY ./server/index.js .
 
 RUN npm install --only=production
 
-CMD ["node", "index.js"]
 
 ENV PORT=8083
 EXPOSE 8083
+
+CMD ["node", "index.js"]

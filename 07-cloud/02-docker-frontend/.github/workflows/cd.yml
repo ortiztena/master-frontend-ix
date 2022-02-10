@@ -8,6 +8,7 @@ on:
 env:
   HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
   IMAGE_NAME: registry.heroku.com/${{ secrets.HEROKU_APP_NAME }}
+  BASE_API_URL: https://js-heroku-back-demon.herokuapp.com/
 
 jobs:
   cd:
@@ -18,7 +19,7 @@ jobs:
       - name: Heroku login
         run: heroku container:login
       - name: Build Docker Image
-        run: docker build -t ${{env.IMAGE_NAME}} .
+        run: docker build -t ${{env.IMAGE_NAME}} --build-arg BASE_API_URL=${{env.BASE_API_URL}} .
       - name: Push Docker Image
         run: heroku container:push web --app js-heroku-front-demon
       - name: Release

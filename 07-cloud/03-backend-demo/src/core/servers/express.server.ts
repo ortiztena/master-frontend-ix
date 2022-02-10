@@ -4,6 +4,6 @@ import { envConstants } from 'core/constants';
 
 export const createApp = () => {
   const app = express();
-  // app.use(cors());
+  app.use(cors({ origin: envConstants.CORS_ORIGIN }));
   return app;
 };
