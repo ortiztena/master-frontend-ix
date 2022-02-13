@@ -30,22 +30,19 @@
 </template>
 
 <script lang="ts">
-import { Product } from "@/types";
-
-import { productService } from "@/services/products";
-
-import { defineComponent } from "vue";
-
+import { productService } from '@/services/products'
+import { defineComponent } from 'vue'
+import { Product } from '@/types'
 export default defineComponent({
   data() {
     return {
       list: [] as Product[],
-    };
+    }
   },
-  async create() {
-    this.list = await productService.get();
+  async created() {
+    this.list = await productService.get()
   },
-});
+})
 </script>
 
 <style lang="scss" scoped>
