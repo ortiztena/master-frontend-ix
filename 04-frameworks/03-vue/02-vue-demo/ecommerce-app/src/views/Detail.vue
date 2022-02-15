@@ -1,11 +1,13 @@
 <template>
   <div class="grid">
     <div>
-      <img :src="`https://picsum.photos/id/${id}/600`" alt="" />
+      <img
+        :src="`https://avatars.githubusercontent.com/u/${product.id}?v4`"
+        alt=""
+      />
     </div>
     <div v-if="product">
-      <h1>{{ product.title }}</h1>
-      <p class="flex">Price:&nbsp;<StaticPrice :quantity="product.price" /></p>
+      <h1>{{ product.login }}</h1>
     </div>
   </div>
 </template>
@@ -13,27 +15,27 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { RouteLocation } from 'vue-router'
-import { Product } from '@/types'
+import { MemberList } from '@/types'
 import { productService } from '@/services/products'
-import StaticPrice from '@/components/StaticPrice.vue'
+
 export default defineComponent({
-  components: {
-    StaticPrice,
-  },
+  components: {},
   data: () => ({
-    product: {} as Product,
+    product: {} as MemberList,
   }),
   computed: {
-    id(): string {
+    login(): string {
       return String((this.$route as RouteLocation).params.id)
     },
   },
   created() {
-    productService.getProduct(this.id).then((product: Product | undefined) => {
-      if (product) {
-        this.product = product
-      }
-    })
+    productService
+      .getMember(this.login)
+      .then((product: MemberList | undefined) => {
+        if (product) {
+          this.product = product
+        }
+      })
   },
 })
 </script>

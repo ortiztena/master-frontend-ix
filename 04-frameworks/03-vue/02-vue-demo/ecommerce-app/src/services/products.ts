@@ -1,19 +1,19 @@
-import { Product } from '@/types'
+import { MemberList } from '@/types'
 
 export const productService = {
-  async get(): Promise<Product[]> {
-    const books = await fetch('/books.mock.json', {
+  async get(): Promise<MemberList[]> {
+    const members = await fetch('/members.mock.json', {
       headers: {
         Accept: 'application/json',
       },
     }).then(
       res => res.json())
-    return books
+    return members
   },
-  async getProduct(id: Product['id']): Promise<Product | undefined> {
-    if (!id) throw new Error('id is required')
+  async getMember(login: MemberList['login']): Promise<MemberList | undefined> {
+    if (!login) throw new Error('login is required')
     return this.get().then(list => {
-      return list.find((item: Product) => String(item.id) === String(id))
+      return list.find((item: MemberList) => String(item.login) === String(login))
     })
   },
 }

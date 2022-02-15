@@ -1,15 +1,15 @@
 <template>
-<nav class="nav flex align-items-center justify-content-between container">
+  <nav
+    class="nav nav flex align-items-center justify-content-between container"
+  >
     <div>Logo</div>
     <div>Cart</div>
-</nav>
+  </nav>
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
-export default defineComponent({
-
-})
+import { defineComponent } from 'vue'
+export default defineComponent({})
 </script>
 
 <style lang="scss" scoped>

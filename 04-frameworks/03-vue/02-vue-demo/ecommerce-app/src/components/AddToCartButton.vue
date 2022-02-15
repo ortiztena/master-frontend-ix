@@ -1,16 +1,17 @@
 <template>
-  <button class="button" type="button" @click.stop="addItem()">
-    Add to Cart
+  <button class="button" type="button" @click.prevent="addItem()">
+    Go to Details
   </button>
 </template>
 
 <script lang="ts">
 import { defineComponent, PropType } from 'vue'
-import { Product } from '@/types'
+import { MemberList } from '@/types'
+
 export default defineComponent({
   props: {
     product: {
-      type: Object as PropType<Product>,
+      type: Object as PropType<MemberList>,
       required: true,
     },
   },

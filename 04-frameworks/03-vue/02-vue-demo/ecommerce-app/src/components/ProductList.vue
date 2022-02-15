@@ -1,41 +1,34 @@
 <template>
   <section>
-    <div>
-      <h1>Products</h1>
-      total:{{ totalProducts }}
+    <div class="flex align-items-center justify-content-between">
+      <h1>List of Members</h1>
+      total: {{ totalProducts }}
     </div>
     <ul class="product-list">
       <li v-for="product in list" :key="product.id">
-        <router-link :to="`/detail/${product.id}`">
-          <article
-            class="grid product-container card"
-            :class="{
-              'product-container--has-discount': product.discount !== '0.0',
-            }"
-          >
+        <router-link :to="`/detail/${product.login}`">
+          <article class="grid product-container card">
             <div class="image">
-              <img :src="`https://picsum.photos/id/${product.id}/200`" alt="" />
+              <img
+                :src="`https://avatars.githubusercontent.com/u/${product.id}?v4`"
+                alt=""
+                class="avatar"
+              />
             </div>
             <div class="product-container__content">
               <h2>
-                {{ product.title }}
+                {{ product.login }}
               </h2>
               <p>
-                <span class="grey-text">Author: </span>
-                <strong>{{ product.author }}</strong>
+                <span class="grey-text">ID: </span>
+                <strong>{{ product.id }}</strong>
               </p>
               <p>
-                <span class="grey-text">Publisher: </span>
-                {{ product.publisher }}
-              </p>
-              <p>
-                <span class="grey-text">Year: </span>{{ product.published }}
+                <span class="grey-text">Node_ID: </span>
+                {{ product.node_id }}
               </p>
             </div>
             <div class="flex product-container__aside">
-              <div class="text-align-end aside__price">
-                <StaticPrice :quantity="product.price" />
-              </div>
               <AddToCartButton :product="product" @addItem="onAddItem" />
             </div>
           </article>
@@ -46,37 +39,29 @@
 </template>
 
 <script lang="ts">
-import { productService } from '@/services/products'
 import { defineComponent } from 'vue'
-import { Product } from '@/types'
-import StaticPrice from '@/components/StaticPrice.vue'
 import AddToCartButton from '@/components/AddToCartButton.vue'
-
+import useProductsApi from '@/composables/productsApi'
+import { MemberList } from '@/types'
 declare module '@vue/runtime-core' {
   export interface ComponentCustomProperties {
-    list: Product[]
+    list: MemberList[]
   }
 }
-
 export default defineComponent({
-  data() {
-    return {
-      list: [] as Product[],
+  components: {
+    AddToCartButton,
+  },
+  async setup() {
+    const { list, totalProducts } = await useProductsApi()
+    const onAddItem = (product: MemberList) => {
+      console.log(product.login)
     }
-  },
-  async created() {
-    this.list = await productService.get()
-  },
-  computed: {
-    totalProducts() {
-      return this.list.length
-    },
-  },
-  components: { StaticPrice, AddToCartButton },
-  methods: {
-    onAddItem(product: Product) {
-      console.log(product)
-    },
+    return {
+      list,
+      totalProducts,
+      onAddItem,
+    }
   },
 })
 </script>
@@ -92,16 +77,10 @@ export default defineComponent({
   align-items: flex-start;
   grid-template-columns: 210px 1fr 100px;
 }
-.product-container__aside {
-  flex-direction: column;
-  justify-content: space-between;
-  align-self: stretch;
-}
-.aside__price {
-  margin-top: 2rem;
-  padding: 0.7em 0;
-}
 .product-container--has-discount {
   background-color: rgba(yellow, 0.5);
+}
+.avatar {
+  max-width: 100px;
 }
 </style>
