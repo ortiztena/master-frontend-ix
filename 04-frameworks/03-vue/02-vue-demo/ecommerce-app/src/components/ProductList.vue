@@ -4,13 +4,19 @@
       <h1>List of Members</h1>
       total: {{ totalProducts }}
     </div>
+    <div>
+      <input type="search" v-model="searchOrganization" />
+      <button @click.prevent="handleClick(searchOrganization)">
+        Search: {{ searchOrganization }}
+      </button>
+    </div>
     <ul class="product-list">
       <li v-for="product in list" :key="product.id">
         <router-link :to="`/detail/${product.login}`">
           <article class="grid product-container card">
             <div class="image">
               <img
-                :src="`https://avatars.githubusercontent.com/u/${product.id}?v4`"
+                :src="`https://avatars.githubusercontent.com/u/${product.id}`"
                 alt=""
                 class="avatar"
               />
@@ -28,9 +34,6 @@
                 {{ product.node_id }}
               </p>
             </div>
-            <div class="flex product-container__aside">
-              <AddToCartButton :product="product" @addItem="onAddItem" />
-            </div>
           </article>
         </router-link>
       </li>
@@ -39,28 +42,35 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-import AddToCartButton from '@/components/AddToCartButton.vue'
+import { computed, defineComponent, ref, Ref } from 'vue'
 import useProductsApi from '@/composables/productsApi'
 import { MemberList } from '@/types'
+// import OrganizationButton from './OrganizationButton.vue'
 declare module '@vue/runtime-core' {
   export interface ComponentCustomProperties {
     list: MemberList[]
   }
 }
+
 export default defineComponent({
-  components: {
-    AddToCartButton,
-  },
   async setup() {
-    const { list, totalProducts } = await useProductsApi()
-    const onAddItem = (product: MemberList) => {
-      console.log(product.login)
+    let organization = 'lemoncode'
+
+    const searchOrganization: Ref<string> = ref(organization)
+
+    const { list, totalProducts } = await useProductsApi(
+      searchOrganization.value
+    )
+
+    const handleClick = (input: string) => {
+      searchOrganization.value = input
     }
+
     return {
       list,
       totalProducts,
-      onAddItem,
+      handleClick,
+      searchOrganization,
     }
   },
 })
@@ -77,8 +87,9 @@ export default defineComponent({
   align-items: flex-start;
   grid-template-columns: 210px 1fr 100px;
 }
-.product-container--has-discount {
-  background-color: rgba(yellow, 0.5);
+.product-container:hover {
+  background-color: rgb(198, 247, 244);
+  border: 1px solid blue;
 }
 .avatar {
   max-width: 100px;

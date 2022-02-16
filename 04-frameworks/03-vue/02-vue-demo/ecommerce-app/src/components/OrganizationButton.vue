@@ -1,6 +1,7 @@
 <template>
+  <input type="text" />
   <button class="button" type="button" @click.prevent="addItem()">
-    Go to Details
+    Search Organization
   </button>
 </template>
 

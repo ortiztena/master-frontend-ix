@@ -4,6 +4,7 @@
       <img
         :src="`https://avatars.githubusercontent.com/u/${product.id}?v4`"
         alt=""
+        class="detailImg"
       />
     </div>
     <div v-if="product">
@@ -39,3 +40,9 @@ export default defineComponent({
   },
 })
 </script>
+
+<style>
+.detailImg {
+  width: 400px;
+}
+</style>
