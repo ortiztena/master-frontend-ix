@@ -2,8 +2,8 @@
   <nav
     class="nav nav flex align-items-center justify-content-between container"
   >
-    <div>Logo</div>
-    <div>Cart</div>
+    <div>Member List</div>
+    <div>Api</div>
   </nav>
 </template>
 

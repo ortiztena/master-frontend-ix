@@ -17,7 +17,7 @@
 import { defineComponent } from 'vue'
 import { RouteLocation } from 'vue-router'
 import { MemberList } from '@/types'
-import { productService } from '@/services/products'
+import { memberService } from '@/services/members'
 
 export default defineComponent({
   components: {},
@@ -30,7 +30,7 @@ export default defineComponent({
     },
   },
   created() {
-    productService
+    memberService
       .getMember(this.login)
       .then((product: MemberList | undefined) => {
         if (product) {

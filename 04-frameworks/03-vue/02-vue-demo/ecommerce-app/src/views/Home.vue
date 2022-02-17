@@ -3,7 +3,7 @@
     <div v-if="error">Error :( {{ error }}</div>
     <Suspense>
       <template #default>
-        <ProductList />
+        <MemberList />
       </template>
       <template #loading>
         <div class="loading">Loading...</div>
@@ -14,10 +14,10 @@
 
 <script lang="ts">
 import { defineComponent, onErrorCaptured, ref, Ref } from 'vue'
-import ProductList from '@/components/ProductList.vue'
+import MemberList from '@/components/MemberList.vue'
 export default defineComponent({
   name: 'Home',
-  components: { ProductList },
+  components: { MemberList },
   setup() {
     const error: Ref<unknown> = ref()
     onErrorCaptured((err) => {
