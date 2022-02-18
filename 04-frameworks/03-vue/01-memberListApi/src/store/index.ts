@@ -7,7 +7,7 @@ export default createStore({
   },
   mutations: {
     UPDATE_ORG(state, org) {
-      // this.state.org = org;
+      state.org = org;
     }
   },
   actions: {},

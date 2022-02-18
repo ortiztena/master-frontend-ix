@@ -53,27 +53,26 @@ declare module '@vue/runtime-core' {
 export default defineComponent({
   data() {
     return {
-      organization: 'lemoncode', // comentar aquí
+      organization: this.$store.getters.org,
       list: [] as MemberList[],
       total: 0,
-      newOrg: '',
     }
   },
 
   async created() {
-    const { list, totalMembers } = await useMembersApi(this.organization)
-    //  const { list, totalMembers } = await useMembersApi(this.$store.getters.org)
+    const { list, totalMembers } = await useMembersApi(this.$store.getters.org)
     this.list = list.value
     this.total = totalMembers.value
   },
   methods: {
     async handleClick() {
-      const { list, totalMembers } = await useMembersApi(this.organization)
-      // const { list, totalMembers } = await useMembersApi(this.$store.getters.org)
+      this.$store.commit('UPDATE_ORG', this.organization)
+      const { list, totalMembers } = await useMembersApi(
+        this.$store.getters.org
+      )
 
       this.list = list.value
       this.total = totalMembers.value
-      // this.$store.commit("UPDATE_ORG", this.newOrg)
     },
   },
 })
