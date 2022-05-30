@@ -22,7 +22,7 @@
   "repository": {
     "type": "git"
   },
-  "author": "Lemoncode",
+  "author": "Pedro Ortiz",
   "license": "MIT",
   "homepage": "",
   "lint-staged": {
