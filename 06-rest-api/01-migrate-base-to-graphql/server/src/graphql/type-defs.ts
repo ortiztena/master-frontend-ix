@@ -27,12 +27,6 @@ export const typeDefs = gql`
 
   input CharacterInput {
       id: ID!
-      name: String!
-      image: String!
-      status: String!
-      species: String!
-      gender: String!
-      type: String
       comment: String
   }
 

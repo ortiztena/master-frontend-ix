@@ -33,6 +33,7 @@ const PORT = 3000;
 
 
   app.listen(PORT, () => {
+    console.log(`Project is running on http://localhost:8080`);
     console.log(`Server running http://localhost:${PORT}`);
     console.log(
       `GraphQL server ready at http://localhost:${PORT}${graphqlServer.graphqlPath}`
