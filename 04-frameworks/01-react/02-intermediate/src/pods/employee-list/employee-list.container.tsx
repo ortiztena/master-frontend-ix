@@ -34,7 +34,7 @@ export const EmployeeListContainer: React.FC = () => {
       {selected && (
         <>
           <Dialog open={!!selected} onClose={handleClose}>
-            <DialogTitle> Employee: {selected}</DialogTitle>
+            <DialogTitle>Employee: {selected}</DialogTitle>
             <DialogContent>
               <EmployeeContainer id={selected} />
             </DialogContent>

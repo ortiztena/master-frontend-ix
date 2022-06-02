@@ -8,5 +8,9 @@ interface Props {
 
 export const Employee: React.FC<Props> = props => {
   const { employee } = props;
-  return <Data employee={employee} />;
+  return (
+    <>
+      <Data employee={employee} />
+    </>
+  );
 };

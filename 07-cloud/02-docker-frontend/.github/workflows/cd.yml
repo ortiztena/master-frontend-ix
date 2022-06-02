@@ -3,7 +3,12 @@ name: Continuos Deployment workflow
 on:
   push:
     branches:
-      - master
+      - main
+
+env:
+  HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+  IMAGE_NAME: registry.heroku.com/${{ secrets.HEROKU_APP_NAME }}
+  BASE_API_URL: https://js-heroku-back-demon.herokuapp.com/
 
 jobs:
   cd:
@@ -11,18 +16,12 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-      - name: Use SSH key
-        run: |
-          mkdir -p ~/.ssh/
-          echo "${{secrets.SSH_PRIVATE_KEY}}" > ~/.ssh/demo_rsa
-          sudo chmod 600 ~/.ssh/demo_rsa
-      - name: Git config
-        run: |
-          git config --global user.email "cd-user@my-app.com"
-          git config --global user.name "cd-user"
-      - name: Install
-        run: npm install
-      - name: Build
-        run: npm run build
-      - name: Deploy
-        run: npm run deploy -- -r git@github.com:ortiztena/github-actions-demo.git
+      - name: Heroku login
+        run: heroku container:login
+      - name: Build Docker Image
+        run: docker build -t ${{env.IMAGE_NAME}} --build-arg BASE_API_URL=${{env.BASE_API_URL}} .
+      - name: Push Docker Image
+        run: heroku container:push web --app js-heroku-front-demon
+      - name: Release
+        run: heroku container:release web --app js-heroku-front-demon
+   
