@@ -24,22 +24,22 @@ Apollo Client is a library that allows you to send queries to the server and get
 
 ```
 query {
-  characters {
-    id
-    name
-    image
-  }
+    characters {
+        id
+        name
+        image
+    }
 }
 ```
 
 - Saving a Comment:
 
 ```
-  mutation {
-        saveComment(character: {
-          id:1
-          comment: "Hi, I'm Rick!"
-        })
+mutation {
+    saveComment(character: {
+        id:1
+        comment: "Hi, I'm Rick!"
+    })
   }
 ```
 
