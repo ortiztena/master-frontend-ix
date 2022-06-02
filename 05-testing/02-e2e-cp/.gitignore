@@ -10,5 +10,3 @@ package-lock.json
 yarn.lock
 .awcache
 public
-cypress/screenshots
-cypress/videos
