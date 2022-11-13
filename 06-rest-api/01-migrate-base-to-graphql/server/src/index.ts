@@ -9,8 +9,6 @@ import {
 import { characterApi } from './api';
 import { typeDefs, resolvers } from './graphql';
 
-
-
 const PORT = 3000;
 (async function () {
   const app = express();
@@ -31,7 +29,6 @@ const PORT = 3000;
   app.use(express.static(publicPath));
   app.use('/api/characterList', characterApi);
 
-
   app.listen(PORT, () => {
     console.log(`Project is running on http://localhost:8080`);
     console.log(`Server running http://localhost:${PORT}`);
@@ -40,3 +37,5 @@ const PORT = 3000;
     );
   });
 })();
+
+//add comment
